@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style2.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <fieldset class="bor">
+        <legend class="title">网页换肤</legend>
+        <div class="nav">
+                <p class="0" style="background-color: violet; margin-left: 2px;"></p>
+                <p class="1" style="background-color: turquoise;"></p>
+                <p class="2" style="background-color: yellow;"></p>
+                <p class="3" style="background-color: red;"></p>
+                <p class="4" style="background-color: dodgerblue;"></p>
+                <p class="5" style="background-color: peachpuff;"></p>
+        </div>
+        <div class="nav1" id="tip">
+            LocalStorage将数据保存在客户端本地的硬件设备中，即使浏览器被关闭了,
+            <br>该数据仍然存在，下次打开浏览器访问网站时仍然可以继续使用。
+        </div>
+    </fieldset>
+</body>
+<script>
+    var littlelist = document.getElementsByTagName("p");
+    var tip = document.getElementById("tip");
+    for(var i=0; i<6; i++){
+        littlelist[i].onclick = function(){
+            var k=this.className;
+            littlelist[k].style.marginTop="6px";
+            for(var j=0;j<6;j++){
+                if(j!=k){
+                    littlelist[j].style.marginTop="12px";
+                }
+            }
+            var col = this.style.backgroundColor;
+            tip.style.backgroundColor=col;
+            localStorage.setItem("backgroundColor",col);
+            localStorage.setItem("class",k);
+        }
+    }
+    if(localStorage.getItem("class")){
+        tip.style.backgroundColor=localStorage.getItem("backgroundColor");
+        var cla = localStorage.getItem("class");
+        littlelist[cla].style.marginTop="6px";
+    }
+    else{
+        littlelist[0].style.marginTop="6px";
+        tip.style.backgroundColor="violet";        
+    }
+
+</script>
+</html>

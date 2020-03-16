@@ -1,0 +1,29 @@
+.bor{
+    width:600px; 
+    height:180px;
+}
+.title{
+    color: red; 
+    font-size: 20px; 
+    font-weight: bolder;
+}
+.nav{
+    border: 1px solid #cccccc;
+    height: 40px; 
+    width: 600px;
+    margin-top: 15px;
+}
+p{
+    height: 20px;
+    width: 20px;
+    margin-top: 12px;
+    float: left;
+    margin-right: 10px;
+}
+.nav1{
+    float: left;
+    height:50px;
+    width:550px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
